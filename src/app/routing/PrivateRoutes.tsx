@@ -8,6 +8,7 @@ import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
 import {Checkbox} from '../modules/widgets/components/Checkbox'
 import {Dropdown1} from '../../_metronic/partials'
 import {Toggle} from '../modules/widgets/components/Toggle'
+import { Input } from '../modules/widgets/components/Input'
 
 const PrivateRoutes = () => {
   const BuilderPageWrapper = lazy(() => import('../pages/layout-builder/BuilderPageWrapper'))
@@ -27,6 +28,7 @@ const PrivateRoutes = () => {
             <>
               <Checkbox name='notification' />
               <Toggle name='toggle' />
+              <Input name='username' />
             </>
           }
         />
