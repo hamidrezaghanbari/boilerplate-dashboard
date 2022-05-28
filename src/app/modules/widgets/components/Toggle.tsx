@@ -1,3 +1,6 @@
+import { Errors } from './errors'
+import {Label} from './label'
+
 interface Props {
   name: string
   label?: string
@@ -5,6 +8,10 @@ interface Props {
   wrapperClassName?: string
   className?: string
   labelClassName?: string
+  errors?: string[]
+  error?: string
+  errorClassName?: string
+  errorsClassName?: string
 }
 
 export const Toggle = ({
@@ -14,18 +21,28 @@ export const Toggle = ({
   wrapperClassName = '',
   className = '',
   labelClassName = '',
+  errors = [],
+  error = undefined,
+  errorClassName = '',
+  errorsClassName = '',
 }: Props) => {
   return (
     <div
       className={`form-check form-switch form-switch-sm form-check-custom form-check-solid ${wrapperClassName}`}
     >
+      <Label label={label} labelClassName={labelClassName} />
       <input
         className={`form-check-input ${className}`}
         type='checkbox'
         name={name}
         defaultChecked={defaultChecked}
       />
-      {label && <label className={`form-check-label ${labelClassName}`}>{label}</label>}
+       <Errors
+        error={error}
+        errors={errors}
+        errorClassName={errorClassName}
+        errorsClassName={errorsClassName}
+      />
     </div>
   )
 }

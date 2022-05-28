@@ -1,3 +1,6 @@
+import {Errors} from './errors'
+import {Label} from './label'
+
 interface Props {
   name: string
   label?: string
@@ -5,6 +8,10 @@ interface Props {
   wrapperClassName?: string
   className?: string
   labelClassName?: string
+  errors?: string[]
+  error?: string
+  errorClassName?: string
+  errorsClassName?: string
 }
 
 export const Checkbox = ({
@@ -14,6 +21,10 @@ export const Checkbox = ({
   wrapperClassName = '',
   className = '',
   labelClassName = '',
+  errors = [],
+  error = '',
+  errorClassName = '',
+  errorsClassName = '',
 }: Props) => {
   return (
     <div className={`form-check form-check-custom form-check-solid me-5 ${wrapperClassName}`}>
@@ -25,11 +36,14 @@ export const Checkbox = ({
         id={name}
       />
 
-      {label && (
-        <label htmlFor={name} className={`form-check-label ${labelClassName}`}>
-          {label}
-        </label>
-      )}
+      <Label label={label} htmlFor={name} labelClassName={labelClassName} />
+
+      <Errors
+        error={error}
+        errors={errors}
+        errorClassName={errorClassName}
+        errorsClassName={errorsClassName}
+      />
     </div>
   )
 }

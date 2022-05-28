@@ -1,3 +1,6 @@
+import {Errors} from './errors'
+import {Label} from './label'
+
 interface Props {
   name: string
   label?: string
@@ -21,29 +24,23 @@ export const Input = ({
   errors = [],
   error = '',
   errorClassName = '',
-  errorsClassName = ''
+  errorsClassName = '',
 }: Props) => {
   return (
     <div className={`row mb-8 ${wrapperClassName}`}>
-      {label && (
-        <label className={`col-lg-3 col-form-label ${labelClassName}`} htmlFor={name}>
-          {label}
-        </label>
-      )}
-
-      <div className='col-lg-6 fv-row'>
-        <input
-          type='text'
-          className={`form-control form-control-lg form-control-solid mb-3 mb-lg-0 ${className}`}
-          placeholder={placeholder ? placeholder : name}
-          name={name}
-        />
-        <div className={`fv-plugins-message-container ${errorsClassName}`}>
-          {[...errors, error]?.map((err, idx) => (
-            <div key={idx} className={`fv-help-block ${errorClassName}`}>{err}</div>
-          ))}
-        </div>
-      </div>
+      <Label label={label} htmlFor={name} labelClassName={labelClassName} />
+      <input
+        type='text'
+        className={`form-control form-control-lg form-control-solid mb-3 mb-lg-0 ${className}`}
+        placeholder={placeholder ? placeholder : name}
+        name={name}
+      />
+      <Errors
+        error={error}
+        errors={errors}
+        errorClassName={errorClassName}
+        errorsClassName={errorsClassName}
+      />
     </div>
   )
 }

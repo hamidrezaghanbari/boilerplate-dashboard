@@ -9,7 +9,7 @@ import {Checkbox} from '../modules/widgets/components/Checkbox'
 import {Dropdown1} from '../../_metronic/partials'
 import {Toggle} from '../modules/widgets/components/Toggle'
 import {Input} from '../modules/widgets/components/Input'
-import {Select} from '../modules/widgets/components/select'
+import { Select } from '../modules/widgets/components/Select'
 
 const PrivateRoutes = () => {
   const BuilderPageWrapper = lazy(() => import('../pages/layout-builder/BuilderPageWrapper'))
