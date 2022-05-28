@@ -7,7 +7,7 @@ interface Props {
   labelClassName?: string
 }
 
-export const Checkbox = ({
+export const Toggle = ({
   name,
   label,
   defaultChecked = false,
@@ -16,20 +16,16 @@ export const Checkbox = ({
   labelClassName = '',
 }: Props) => {
   return (
-    <div className={`form-check form-check-custom form-check-solid me-5 ${wrapperClassName}`}>
+    <div
+      className={`form-check form-switch form-switch-sm form-check-custom form-check-solid ${wrapperClassName}`}
+    >
       <input
         className={`form-check-input ${className}`}
-        defaultChecked={defaultChecked}
         type='checkbox'
         name={name}
-        id={name}
+        defaultChecked={defaultChecked}
       />
-
-      {label && (
-        <label htmlFor={name} className={`form-check-label ${labelClassName}`}>
-          {label}
-        </label>
-      )}
+      {label && <label className={`form-check-label ${labelClassName}`}>{label}</label>}
     </div>
   )
 }
