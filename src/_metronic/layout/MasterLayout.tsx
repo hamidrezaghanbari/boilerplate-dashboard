@@ -166,15 +166,15 @@ const MasterLayout = () => {
         <div className='wrapper d-flex flex-column flex-row-fluid' id='kt_wrapper'>
           <HeaderWrapper headerMenus={headerMenus} />
 
-          {/* <div id='kt_content' className='content d-flex flex-column flex-column-fluid'>
-            <Toolbar />
+          <div id='kt_content' className='content d-flex flex-column flex-column-fluid'>
+            {/* <Toolbar /> */}
             <div className='post d-flex flex-column-fluid' id='kt_post'>
               <Content>
                 <Outlet />
               </Content>
             </div>
           </div>
-          <Footer /> */}
+          {/* <Footer /> */}
         </div>
       </div>
 

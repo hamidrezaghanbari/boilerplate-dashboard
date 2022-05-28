@@ -5,8 +5,8 @@ import TopBarProgress from 'react-topbar-progress-indicator'
 import {DashboardWrapper} from '../pages/dashboard/DashboardWrapper'
 import {MenuTestPage} from '../pages/MenuTestPage'
 import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
-
-
+import { Checkbox } from '../modules/widgets/components/Checkbox'
+import { Dropdown1 } from '../../_metronic/partials'
 
 const PrivateRoutes = () => {
   const BuilderPageWrapper = lazy(() => import('../pages/layout-builder/BuilderPageWrapper'))
@@ -20,7 +20,9 @@ const PrivateRoutes = () => {
   return (
     <Routes>
       <Route element={<MasterLayout />}>
-        <Route path='*' element={<p>hope you</p>} />
+        <Route path='*' element={<Checkbox name="notification" />} />
+        {/* <Route path='*' element={<Dropdown1 />} /> */}
+
 
         {/* Redirect to Dashboard after success login/registartion
         <Route path='auth/*' element={<Navigate to='/dashboard' />} />
