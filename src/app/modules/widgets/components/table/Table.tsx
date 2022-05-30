@@ -4,7 +4,7 @@ import {Tr} from './Tr'
 interface Props {
   title: string
   description?: string
-  menu?: HTMLElement
+  actions?: any
   loading?: boolean
   data?: any[]
   columns?: any[]
@@ -18,7 +18,7 @@ interface Props {
 export const Table = ({
   title,
   description = '',
-  menu,
+  actions,
   loading = false,
   skeletonRowsCount = 5,
   data = [],
@@ -37,7 +37,7 @@ export const Table = ({
           <span className='card-label fw-bolder fs-3 mb-1'>{title}</span>
           {description && <span className='text-muted mt-1 fw-bold fs-7'>{description}</span>}
         </h3>
-        {menu && menu}
+        {actions && actions}
         {/* <div
           className='card-toolbar'
           data-bs-toggle='tooltip'
@@ -67,7 +67,11 @@ export const Table = ({
             <thead>
               <tr className='fw-bolder text-muted'>
                 {tableColumns?.map((column, idx) => (
-                  <th data-testid={`${loading ? 'skeleton' : 'data'}-header`} key={idx} className={`${tableColumns?.length - 1 === idx ? 'text-end' : ''}`}>
+                  <th
+                    data-testid={`${loading ? 'skeleton' : 'data'}-header`}
+                    key={idx}
+                    className={`${tableColumns?.length - 1 === idx ? 'text-end' : ''}`}
+                  >
                     {column}
                   </th>
                 ))}
