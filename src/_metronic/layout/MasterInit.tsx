@@ -1,4 +1,5 @@
 import {useEffect, useRef} from 'react'
+import { useAuth } from '../../app/modules/auth'
 import {
   MenuComponent,
   DrawerComponent,
@@ -13,6 +14,8 @@ import {useLayout} from './core'
 
 export function MasterInit() {
   const {config} = useLayout()
+  const {auth} = useAuth()
+
   const isFirstRun = useRef(true)
   const pluginsInitialization = () => {
     isFirstRun.current = false
@@ -30,9 +33,10 @@ export function MasterInit() {
   useEffect(() => {
     if (isFirstRun.current) {
       isFirstRun.current = false
-      pluginsInitialization()
     }
-  }, [config])
+    // TODO for more think about this
+    pluginsInitialization()
+  }, [config, auth])
 
   return <></>
 }
