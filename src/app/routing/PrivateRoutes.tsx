@@ -9,7 +9,8 @@ import {Checkbox} from '../modules/widgets/components/Checkbox'
 import {Dropdown1} from '../../_metronic/partials'
 import {Toggle} from '../modules/widgets/components/Toggle'
 import {Input} from '../modules/widgets/components/Input'
-import { Select } from '../modules/widgets/components/Select'
+import {Select} from '../modules/widgets/components/Select'
+import {Table} from '../modules/widgets/components/table/Table'
 
 const PrivateRoutes = () => {
   const BuilderPageWrapper = lazy(() => import('../pages/layout-builder/BuilderPageWrapper'))
@@ -27,10 +28,30 @@ const PrivateRoutes = () => {
           path='*'
           element={
             <>
-              <Checkbox name='notification' />
+              {/* <Checkbox name='notification' />
               <Toggle name='toggle' />
               <Input name='username' />
-              <Select name='select' options={[{title: 'option1', value: 'value1'}]} />
+              <Select name='select' options={[{title: 'option1', value: 'value1'}]} /> */}
+              <Table
+                title='title'
+                loading={false}
+                // data={[]}
+                data={[
+                  {
+                    name: 'Hamidreza',
+                    family: 'Ghanbari',
+                    photo: 'photo',
+                    progress: 'progress',
+                    action: {
+                      children: (
+                        <div>
+                          <button>click</button>
+                        </div>
+                      ),
+                    },
+                  },
+                ]}
+              />
             </>
           }
         />
