@@ -167,7 +167,9 @@ const MasterLayout = () => {
           <HeaderWrapper headerMenus={headerMenus} />
 
           <div id='kt_content' className='content d-flex flex-column flex-column-fluid'>
-            {/* <Toolbar /> */}
+            {/* toolbar and breadcrumb */}
+            <Toolbar />
+            {/* body of the page */}
             <div className='post d-flex flex-column-fluid' id='kt_post'>
               <Content>
                 <Outlet />

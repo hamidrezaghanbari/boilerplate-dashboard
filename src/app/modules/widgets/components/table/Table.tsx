@@ -32,14 +32,15 @@ export const Table = ({
   const tableColumns = !!columns?.length ? columns : Object.keys(data?.[0] ?? {})
 
   return (
-    <div className='card'>
-      <div className='card-header border-0 pt-5'>
-        <h3 className='card-title align-items-start flex-column'>
-          <span className='card-label fw-bolder fs-3 mb-1'>{title}</span>
-          {description && <span className='text-muted mt-1 fw-bold fs-7'>{description}</span>}
-        </h3>
-        {actions && actions}
-        {/* <div
+    <>
+      <div className='card'>
+        <div className='card-header border-0 pt-5'>
+          <h3 className='card-title align-items-start flex-column'>
+            <span className='card-label fw-bolder fs-3 mb-1'>{title}</span>
+            {description && <span className='text-muted mt-1 fw-bold fs-7'>{description}</span>}
+          </h3>
+          {actions && actions}
+          {/* <div
           className='card-toolbar'
           data-bs-toggle='tooltip'
           data-bs-placement='top'
@@ -56,30 +57,30 @@ export const Table = ({
             New Member
           </a>
         </div> */}
-      </div>
+        </div>
 
-      <div className='card-body py-3'>
-        {/* begin::Table container */}
-        <div className='table-responsive'>
-          {/* begin::Table */}
-          <table className='table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4'>
-            {/* begin::Table head */}
+        <div className='card-body py-3'>
+          {/* begin::Table container */}
+          <div className='table-responsive'>
+            {/* begin::Table */}
+            <table className='table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4'>
+              {/* begin::Table head */}
 
-            <thead>
-              <tr className='fw-bolder text-muted'>
-                {tableColumns?.map((column, idx) => (
-                  <th
-                    data-testid={`${loading ? 'skeleton' : 'data'}-header`}
-                    key={idx}
-                    className={`${tableColumns?.length - 1 === idx ? 'text-end' : ''}`}
-                  >
-                    {column}
-                  </th>
-                ))}
-              </tr>
-            </thead>
+              <thead>
+                <tr className='fw-bolder text-muted'>
+                  {tableColumns?.map((column, idx) => (
+                    <th
+                      data-testid={`${loading ? 'skeleton' : 'data'}-header`}
+                      key={idx}
+                      className={`${tableColumns?.length - 1 === idx ? 'text-end' : ''}`}
+                    >
+                      {column}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
 
-            {/* <thead>
+              {/* <thead>
               <tr className='fw-bolder text-muted'>
                 <th className='w-25px'>
                   <div className='form-check form-check-sm form-check-custom form-check-solid'>
@@ -99,26 +100,26 @@ export const Table = ({
                 <th className='min-w-100px text-end'>Actions</th>
               </tr>
             </thead> */}
-            {/* end::Table head */}
-            {/* begin::Table body */}
-            <tbody>
-              {(loading ? Array.from({length: skeletonRowsCount}) : data)?.map((row, idx) => (
-                <Tr
-                  row={row}
-                  className={trClassName}
-                  trSkeletonClassName={trSkeletonClassName}
-                  key={idx}
-                  loading={loading}
-                />
-              ))}
+              {/* end::Table head */}
+              {/* begin::Table body */}
+              <tbody>
+                {(loading ? Array.from({length: skeletonRowsCount}) : data)?.map((row, idx) => (
+                  <Tr
+                    row={row}
+                    className={trClassName}
+                    trSkeletonClassName={trSkeletonClassName}
+                    key={idx}
+                    loading={loading}
+                  />
+                ))}
 
-              {data?.length === 0 && !loading && (
-                <tr>
-                  <td>Empty table</td>
-                </tr>
-              )}
+                {data?.length === 0 && !loading && (
+                  <tr>
+                    <td>Empty table</td>
+                  </tr>
+                )}
 
-              {/* <tr>
+                {/* <tr>
                 <td>
                   <div className='form-check form-check-sm form-check-custom form-check-solid'>
                     <input className='form-check-input widget-9-check' type='checkbox' value='1' />
@@ -190,7 +191,7 @@ export const Table = ({
                   </div>
                 </td>
               </tr> */}
-              {/* <tr>
+                {/* <tr>
                 <td>
                   <div className='form-check form-check-sm form-check-custom form-check-solid'>
                     <input className='form-check-input widget-9-check' type='checkbox' value='1' />
@@ -472,93 +473,61 @@ export const Table = ({
                   </div>
                 </td>
               </tr> */}
-            </tbody>
-            {/* end::Table body */}
-          </table>
-          {/* end::Table */}
-        </div>
+              </tbody>
+              {/* end::Table body */}
+            </table>
+            {/* end::Table */}
+          </div>
 
-        <div className='d-flex justify-content-center align-items-center'>
-          <Button
-            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
-            disabled={false}
-            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
-          />
-          <Button
-            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
-            disabled={false}
-            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
-          />
-          <Button
-            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
-            disabled={false}
-            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
-          />
-          <Button
-            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
-            disabled={false}
-            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
-          />
-          <Button
-            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
-            disabled={false}
-            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
-          />
-          <Button
-            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
-            disabled={false}
-            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
-          />
+          {/* end::Table container */}
         </div>
-
-        <div className='d-flex flex-stack flex-wrap pt-10'>
-          <div className='fs-6 fw-bold text-gray-700'>Showing 1 to 10 of 50 entries</div>
-          <ul className='pagination'>
-            <li className='page-item previous'>
-              <a href='#' className='page-link'>
-                <i className='previous'></i>
-              </a>
-            </li>
-            <li className='page-item active'>
-              <a href='#' className='page-link'>
-                1
-              </a>
-            </li>
-            <li className='page-item'>
-              <a href='#' className='page-link'>
-                2
-              </a>
-            </li>
-            <li className='page-item'>
-              <a href='#' className='page-link'>
-                3
-              </a>
-            </li>
-            <li className='page-item'>
-              <a href='#' className='page-link'>
-                4
-              </a>
-            </li>
-            <li className='page-item'>
-              <a href='#' className='page-link'>
-                5
-              </a>
-            </li>
-            <li className='page-item'>
-              <a href='#' className='page-link'>
-                6
-              </a>
-            </li>
-            <li className='page-item next'>
-              <a href='#' className='page-link'>
-                <i className='next'></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* end::Table container */}
       </div>
-    </div>
+      {/* TODO make it as component for table */}
+      <div className='d-flex flex-stack flex-wrap pt-10'>
+        <div className='fs-6 fw-bold text-gray-700'>Showing 1 to 10 of 50 entries</div>
+        <ul className='pagination'>
+          <li className='page-item previous'>
+            <a href='#' className='page-link'>
+              <i className='previous'></i>
+            </a>
+          </li>
+          <li className='page-item active'>
+            <a href='#' className='page-link'>
+              1
+            </a>
+          </li>
+          <li className='page-item'>
+            <a href='#' className='page-link'>
+              2
+            </a>
+          </li>
+          <li className='page-item'>
+            <a href='#' className='page-link'>
+              3
+            </a>
+          </li>
+          <li className='page-item'>
+            <a href='#' className='page-link'>
+              4
+            </a>
+          </li>
+          <li className='page-item'>
+            <a href='#' className='page-link'>
+              5
+            </a>
+          </li>
+          <li className='page-item'>
+            <a href='#' className='page-link'>
+              6
+            </a>
+          </li>
+          <li className='page-item next'>
+            <a href='#' className='page-link'>
+              <i className='next'></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </>
   )
 }
