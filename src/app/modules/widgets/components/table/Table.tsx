@@ -1,4 +1,5 @@
 import {KTSVG, toAbsoluteUrl} from '../../../../../_metronic/helpers'
+import {Button} from '../Button'
 import {Tr} from './Tr'
 
 interface Props {
@@ -476,6 +477,86 @@ export const Table = ({
           </table>
           {/* end::Table */}
         </div>
+
+        <div className='d-flex justify-content-center align-items-center'>
+          <Button
+            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
+            disabled={false}
+            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
+          />
+          <Button
+            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
+            disabled={false}
+            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
+          />
+          <Button
+            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
+            disabled={false}
+            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
+          />
+          <Button
+            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
+            disabled={false}
+            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
+          />
+          <Button
+            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
+            disabled={false}
+            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
+          />
+          <Button
+            className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm mx-2'
+            disabled={false}
+            icon={<KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />}
+          />
+        </div>
+
+        <div className='d-flex flex-stack flex-wrap pt-10'>
+          <div className='fs-6 fw-bold text-gray-700'>Showing 1 to 10 of 50 entries</div>
+          <ul className='pagination'>
+            <li className='page-item previous'>
+              <a href='#' className='page-link'>
+                <i className='previous'></i>
+              </a>
+            </li>
+            <li className='page-item active'>
+              <a href='#' className='page-link'>
+                1
+              </a>
+            </li>
+            <li className='page-item'>
+              <a href='#' className='page-link'>
+                2
+              </a>
+            </li>
+            <li className='page-item'>
+              <a href='#' className='page-link'>
+                3
+              </a>
+            </li>
+            <li className='page-item'>
+              <a href='#' className='page-link'>
+                4
+              </a>
+            </li>
+            <li className='page-item'>
+              <a href='#' className='page-link'>
+                5
+              </a>
+            </li>
+            <li className='page-item'>
+              <a href='#' className='page-link'>
+                6
+              </a>
+            </li>
+            <li className='page-item next'>
+              <a href='#' className='page-link'>
+                <i className='next'></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
         {/* end::Table container */}
       </div>
     </div>
