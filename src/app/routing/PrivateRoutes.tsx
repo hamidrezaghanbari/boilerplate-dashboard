@@ -14,6 +14,7 @@ import {Table} from '../modules/widgets/components/table/Table'
 import {DropDown} from '../modules/widgets/components/DropDown'
 import {KTSVG} from '../../_metronic/helpers'
 import {Filter} from '../modules/widgets/components/Filter'
+import {Button} from '../modules/widgets/components/Button'
 
 const PrivateRoutes = () => {
   const BuilderPageWrapper = lazy(() => import('../pages/layout-builder/BuilderPageWrapper'))
@@ -76,8 +77,19 @@ const PrivateRoutes = () => {
                 loading={false}
                 actions={
                   <div className='card-toolbar'>
-                    <FilterItem />
+                    {/* <FilterItem /> */}
                     {/* <MenuItem /> */}
+                    <Button
+                      className='btn btn-sm btn-flex btn-light btn-active-primary fw-bolder'
+                      disabled={false}
+                      title='Click me'
+                      icon={
+                        <KTSVG
+                          path='/media/icons/duotune/general/gen031.svg'
+                          className='svg-icon-2'
+                        />
+                      }
+                    />
                   </div>
                 }
                 // data={[]}
@@ -106,14 +118,11 @@ const PrivateRoutes = () => {
           }
         />
         <Route path='*' element={<Dropdown1 />} />
-
-         Redirect to Dashboard after success login/registartion
-        <Route path='auth/*' element={<Navigate to='/dashboard' />} />
-        {/* Pages */}
+        Redirect to Dashboard after success login/registartion
+        {/* <Route path='auth/*' element={<Navigate to='/dashboard' />} />
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='builder' element={<BuilderPageWrapper />} />
         <Route path='menu-test' element={<MenuTestPage />} />
-        {/* Lazy Modules */}
         <Route
           path='crafted/pages/profile/*'
           element={
@@ -161,9 +170,9 @@ const PrivateRoutes = () => {
               <UsersPage />
             </SuspensedView>
           }
-        />
+        /> */}
         {/* Page Not Found */}
-        <Route path='*' element={<Navigate to='/error/404' />} /> 
+        {/* <Route path='*' element={<Navigate to='/error/404' />} />  */}
       </Route>
     </Routes>
   )
