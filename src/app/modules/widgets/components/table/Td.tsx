@@ -18,7 +18,7 @@ export const Td = ({
       className={loading ? skeletonClassName : className}
       data-testid={`${loading ? 'skeleton' : 'data'}-column`}
     >
-      {!!value?.children ? value?.children : typeof value === 'string' ? value : null}
+      {!!value?.children ? value?.children : typeof value !== 'object' ? value : null}
     </td>
   )
 }
