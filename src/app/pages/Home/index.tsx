@@ -54,22 +54,11 @@ const HomePage = () => {
         loading={false}
         actions={
           <div className='card-toolbar'>
+            {/* TODO for conflict solution for multiple filter options */}
             <FilterItem />
             {/* <MenuItem /> */}
-            {/* <Button
-                      className='btn btn-sm btn-flex btn-light btn-active-primary fw-bolder'
-                      disabled={false}
-                      title='Click me'
-                      icon={
-                        <KTSVG
-                          path='/media/icons/duotune/general/gen031.svg'
-                          className='svg-icon-2'
-                        />
-                      }
-                    /> */}
           </div>
         }
-        // data={[]}
         data={[
           {
             name: 'Hamidreza',

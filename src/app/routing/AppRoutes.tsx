@@ -29,7 +29,7 @@ const AppRoutes: FC = () => {
         <Route element={<App />}>
           <Route path='error/*' element={<ErrorsPage />} />
           <Route path='logout' element={<Logout />} />
-          {/* TODO correct this */}
+
           {currentUser ? (
             <>
               <Route path='/*' element={<PrivateRoutes />} />
