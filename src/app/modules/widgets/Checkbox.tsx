@@ -1,7 +1,7 @@
 import {Errors} from './errors'
 import {Label} from './label'
 
-interface Props {
+export interface Props {
   name: string
   label?: string
   defaultChecked?: boolean
@@ -12,6 +12,8 @@ interface Props {
   error?: string
   errorClassName?: string
   errorsClassName?: string
+  otherProps?: any
+  register?: any
 }
 
 export const Checkbox = ({
@@ -25,18 +27,20 @@ export const Checkbox = ({
   error = '',
   errorClassName = '',
   errorsClassName = '',
+  register = null
 }: Props) => {
   return (
-    <div className={`form-check form-check-custom form-check-solid me-5 ${wrapperClassName}`}>
+    <label className={`form-check form-check-custom form-check-solid me-5 ${wrapperClassName}`}>
       <input
         className={`form-check-input ${className}`}
         defaultChecked={defaultChecked}
         type='checkbox'
         name={name}
         id={name}
+        {...(register?.(name) ?? {})}
       />
 
-      <Label label={label} htmlFor={name} labelClassName={labelClassName} />
+      <Label label={label} htmlFor={name} labelClassName={`form-check-label ${labelClassName}`} />
 
       <Errors
         error={error}
@@ -44,6 +48,6 @@ export const Checkbox = ({
         errorClassName={errorClassName}
         errorsClassName={errorsClassName}
       />
-    </div>
+    </label>
   )
 }

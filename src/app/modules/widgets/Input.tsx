@@ -13,6 +13,8 @@ interface Props {
   errorClassName?: string
   errorsClassName?: string
   type?: 'input' | 'number'
+  otherProps?: any
+  register?: any
 }
 
 export const Input = ({
@@ -26,7 +28,8 @@ export const Input = ({
   error = '',
   errorClassName = '',
   errorsClassName = '',
-  type = 'input'
+  type = 'input',
+  register = null
 }: Props) => {
   return (
     <div className={wrapperClassName}>
@@ -36,6 +39,7 @@ export const Input = ({
         className={`form-control form-control-lg form-control-solid mb-3 mb-lg-0 ${className}`}
         placeholder={placeholder ? placeholder : name}
         name={name}
+        {...register?.(name)}
       />
       <Errors
         error={error}

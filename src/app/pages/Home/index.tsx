@@ -4,7 +4,7 @@ import {DropDown} from '../../modules/widgets/DropDown'
 import {Filter} from '../../modules/widgets/Filter'
 import {Input} from '../../modules/widgets/Input'
 import {Select} from '../../modules/widgets/Select'
-import { Table } from '../../modules/widgets/table/Table'
+import {Table} from '../../modules/widgets/table/Table'
 import {Toggle} from '../../modules/widgets/Toggle'
 
 const HomePage = () => {
@@ -21,7 +21,41 @@ const HomePage = () => {
           <KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />
           Filter
         </button>
-        <Filter />
+        <Filter
+          title='Custom Filter:'
+          options={[
+            {label: 'Name', type: 'input', name: 'name'},
+            // {label: 'Age', type: 'number', name: 'age'},
+            {
+              label: 'Options',
+              type: 'select',
+              name: 'options',
+              options: [
+                {title: 'optoin1', value: 'option1'},
+                {title: 'optoin1', value: 'option1'},
+              ],
+            },
+            {
+              label: 'Checkboxes',
+              name: 'checkboxes',
+              type: 'checkboxes',
+              checkboxes: [
+                {name: 'check1', label: 'Check 1'},
+                {name: 'check2', label: 'Check 2'},
+              ],
+            },
+            {
+              label: 'Toggles',
+              name: 'toggles',
+              type: 'toggles',
+              toggles: [
+                {name: 'toggle1', label: 'Toggle 1'},
+                {name: 'toggle2', label: 'Toggle 2'},
+              ],
+            },
+          ]}
+          onApply={(props: any) => console.log(props)}
+        />
       </>
     )
   }

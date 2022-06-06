@@ -1,7 +1,7 @@
-import { Errors } from './errors'
+import {Errors} from './errors'
 import {Label} from './label'
 
-interface Props {
+export interface Props {
   name: string
   label?: string
   defaultChecked?: boolean
@@ -12,6 +12,8 @@ interface Props {
   error?: string
   errorClassName?: string
   errorsClassName?: string
+  otherProps?: any
+  register?: any
 }
 
 export const Toggle = ({
@@ -25,19 +27,21 @@ export const Toggle = ({
   error = undefined,
   errorClassName = '',
   errorsClassName = '',
+  register = null
 }: Props) => {
   return (
     <div
       className={`form-check form-switch form-switch-sm form-check-custom form-check-solid ${wrapperClassName}`}
     >
-      <Label label={label} labelClassName={labelClassName} />
       <input
         className={`form-check-input ${className}`}
         type='checkbox'
         name={name}
         defaultChecked={defaultChecked}
+        {...register?.(name)}
       />
-       <Errors
+      <Label label={label} labelClassName={labelClassName} />
+      <Errors
         error={error}
         errors={errors}
         errorClassName={errorClassName}

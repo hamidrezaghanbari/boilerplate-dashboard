@@ -12,6 +12,8 @@ interface Props {
   errorClassName?: string
   errorsClassName?: string
   options?: {title: string | number; value: string | number}[]
+  otherProps?: any
+  register?: any
 }
 
 export const Select = ({
@@ -25,6 +27,7 @@ export const Select = ({
   errorClassName = '',
   errorsClassName = '',
   options = [],
+  register = null
 }: Props) => {
   return (
     <div className={wrapperClassName}>
@@ -33,6 +36,7 @@ export const Select = ({
       <select
         name={name}
         className={`form-select form-select-solid form-select-lg fw-bold ${className}`}
+        {...register?.(name)}
       >
         {options?.map((option, idx) => (
           <option key={idx} value={option?.value}>
