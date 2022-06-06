@@ -2,8 +2,6 @@ import {lazy, FC, Suspense} from 'react'
 import {Route, Routes, Navigate} from 'react-router-dom'
 import {MasterLayout} from '../../_metronic/layout/MasterLayout'
 import TopBarProgress from 'react-topbar-progress-indicator'
-import {DashboardWrapper} from '../pages/dashboard/DashboardWrapper'
-import {MenuTestPage} from '../pages/MenuTestPage'
 import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
 
 const PrivateRoutes = () => {
@@ -14,12 +12,9 @@ const PrivateRoutes = () => {
   return (
     <Routes>
       <Route element={<MasterLayout />}>
-        
-
-        {/* <Route path='auth/*' element={<Navigate to='/dashboard' />} />
-        <Route path='dashboard' element={<DashboardWrapper />} />
+        <Route path='auth/*' element={<Navigate to='/build' />} />
+        {/* This page is important for changing the layer of dashboard */}
         <Route path='builder' element={<BuilderPageWrapper />} />
-        <Route path='menu-test' element={<MenuTestPage />} /> */}
 
         <Route
           path='*'
@@ -29,9 +24,9 @@ const PrivateRoutes = () => {
             </SuspensedView>
           }
         />
-        
+
         {/* Page Not Found */}
-        <Route path='*' element={<Navigate to='/error/404' />} /> 
+        <Route path='*' element={<Navigate to='/error/404' />} />
       </Route>
     </Routes>
   )
