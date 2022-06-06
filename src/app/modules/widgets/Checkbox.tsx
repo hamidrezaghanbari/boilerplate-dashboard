@@ -3,6 +3,7 @@ import {Label} from './label'
 
 export interface Props {
   name: string
+  value: string
   label?: string
   defaultChecked?: boolean
   wrapperClassName?: string
@@ -27,7 +28,8 @@ export const Checkbox = ({
   error = '',
   errorClassName = '',
   errorsClassName = '',
-  register = null
+  register = null,
+  value,
 }: Props) => {
   return (
     <label className={`form-check form-check-custom form-check-solid me-5 ${wrapperClassName}`}>
@@ -36,11 +38,12 @@ export const Checkbox = ({
         defaultChecked={defaultChecked}
         type='checkbox'
         name={name}
-        id={name}
-        {...(register?.(name) ?? {})}
+        value={value}
+        id={value}
+        {...register?.(name)}
       />
 
-      <Label label={label} htmlFor={name} labelClassName={`form-check-label ${labelClassName}`} />
+      <Label label={label} htmlFor={value} labelClassName={`form-check-label ${labelClassName}`} />
 
       <Errors
         error={error}

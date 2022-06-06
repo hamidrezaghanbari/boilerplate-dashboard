@@ -3,6 +3,7 @@ import {Checkbox, Props as CheckboxProp} from './Checkbox'
 import {Input} from './Input'
 import {Select} from './Select'
 import {Toggle, Props as ToggleProp} from './Toggle'
+
 interface Option {
   label: string
   name: string
@@ -62,9 +63,10 @@ export const Filter = ({title, options, onApply}: Props) => {
             <Checkbox
               className='form-check-input'
               key={key}
-              name={checkbox?.name}
+              name={option?.name}
               label={checkbox?.label}
               register={register}
+              value={checkbox?.value}
             />
           )) ?? null
         )

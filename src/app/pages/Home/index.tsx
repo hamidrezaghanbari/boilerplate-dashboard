@@ -40,8 +40,8 @@ const HomePage = () => {
               name: 'checkboxes',
               type: 'checkboxes',
               checkboxes: [
-                {name: 'check1', label: 'Check 1'},
-                {name: 'check2', label: 'Check 2'},
+                {name: 'checkboxes', label: 'Check 1', value: 'reza'},
+                {name: 'checkboxes', label: 'Check 2', value: 'ghoroghi'},
               ],
             },
             {
@@ -78,7 +78,7 @@ const HomePage = () => {
   }
   return (
     <>
-      <Checkbox name='notification' />
+      <Checkbox value="notification" name='notification' />
       <Toggle name='toggle' />
       <Input name='username' />
       <Select name='select' options={[{title: 'option1', value: 'value1'}]} />
