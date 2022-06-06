@@ -1,11 +1,11 @@
 import {KTSVG} from '../../../_metronic/helpers'
-import {Checkbox} from '../../modules/widgets/components/Checkbox'
-import {DropDown} from '../../modules/widgets/components/DropDown'
-import {Filter} from '../../modules/widgets/components/Filter'
-import {Input} from '../../modules/widgets/components/Input'
-import {Select} from '../../modules/widgets/components/Select'
-import { Table } from '../../modules/widgets/components/table/Table'
-import {Toggle} from '../../modules/widgets/components/Toggle'
+import {Checkbox} from '../../modules/widgets/Checkbox'
+import {DropDown} from '../../modules/widgets/DropDown'
+import {Filter} from '../../modules/widgets/Filter'
+import {Input} from '../../modules/widgets/Input'
+import {Select} from '../../modules/widgets/Select'
+import { Table } from '../../modules/widgets/table/Table'
+import {Toggle} from '../../modules/widgets/Toggle'
 
 const HomePage = () => {
   const FilterItem = () => {

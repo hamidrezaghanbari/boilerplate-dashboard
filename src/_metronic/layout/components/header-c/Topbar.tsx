@@ -1,105 +1,17 @@
 import clsx from 'clsx'
 import React, {FC} from 'react'
 import {KTSVG, toAbsoluteUrl} from '../../../helpers'
-import {HeaderNotificationsMenu, HeaderUserMenu, QuickLinks, Search} from '../../../partials'
+import {HeaderUserMenu} from '../../../partials'
 import {useLayout} from '../../core'
 
 const toolbarButtonMarginClass = 'ms-1 ms-lg-3',
-  toolbarButtonHeightClass = 'w-30px h-30px w-md-40px h-md-40px',
-  toolbarUserAvatarHeightClass = 'symbol-30px symbol-md-40px',
-  toolbarButtonIconSizeClass = 'svg-icon-1'
+  toolbarUserAvatarHeightClass = 'symbol-30px symbol-md-40px'
 
 const Topbar: FC = () => {
   const {config} = useLayout()
 
   return (
     <div className='d-flex align-items-stretch flex-shrink-0'>
-      {/* Search */}
-      {/* <div className={clsx('d-flex align-items-stretch', toolbarButtonMarginClass)}>
-        <Search />
-      </div> */}
-      {/* Activities */}
-      {/* begin::Drawer toggle */}
-      {/* <div className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}>
-        <div
-          className={clsx(
-            'btn btn-icon btn-active-light-primary btn-custom',
-            toolbarButtonHeightClass
-          )}
-          id='kt_activities_toggle'
-        >
-          <KTSVG
-            path='/media/icons/duotune/general/gen032.svg'
-            className={toolbarButtonIconSizeClass}
-          />
-        </div>
-      </div> */}
-      {/* end::Drawer toggle */}
-
-      {/* NOTIFICATIONS */}
-      {/* begin::Menu- wrapper */}
-      {/* <div className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}>
-        <div
-          className={clsx(
-            'btn btn-icon btn-active-light-primary btn-custom',
-            toolbarButtonHeightClass
-          )}
-          data-kt-menu-trigger='click'
-          data-kt-menu-attach='parent'
-          data-kt-menu-placement='bottom-end'
-          data-kt-menu-flip='bottom'
-        >
-          <KTSVG
-            path='/media/icons/duotune/general/gen022.svg'
-            className={toolbarButtonIconSizeClass}
-          />
-        </div>
-        <HeaderNotificationsMenu />
-      </div> */}
-      {/* end::Menu wrapper */}
-
-      {/* CHAT */}
-      {/* begin::Menu wrapper */}
-      {/* <div className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}>
-        <div
-          className={clsx(
-            'btn btn-icon btn-active-light-primary btn-custom position-relative',
-            toolbarButtonHeightClass
-          )}
-          id='kt_drawer_chat_toggle'
-        >
-          <KTSVG
-            path='/media/icons/duotune/communication/com012.svg'
-            className={toolbarButtonIconSizeClass}
-          />
-
-          <span className='bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink'></span>
-        </div>
-      </div> */}
-      {/* end::Menu wrapper */}
-
-      {/* Quick links */}
-      {/* begin::Menu wrapper */}
-      {/* <div className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}>
-        <div
-          className={clsx(
-            'btn btn-icon btn-active-light-primary btn-custom',
-            toolbarButtonHeightClass
-          )}
-          data-kt-menu-trigger='click'
-          data-kt-menu-attach='parent'
-          data-kt-menu-placement='bottom-end'
-          data-kt-menu-flip='bottom'
-        >
-          <KTSVG
-            path='/media/icons/duotune/general/gen025.svg'
-            className={toolbarButtonIconSizeClass}
-          />
-        </div>
-        <QuickLinks />
-      </div> */}
-      {/* end::Menu wrapper */}
-
       {/* begin::User */}
       <div
         className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}
@@ -119,18 +31,6 @@ const Topbar: FC = () => {
         {/* end::Toggle */}
       </div>
       {/* end::User */}
-
-      {/* begin::Aside Toggler */}
-      {/* {config.header.left === 'menu' && (
-        <div className='d-flex align-items-center d-lg-none ms-2 me-n3' title='Show header menu'>
-          <div
-            className='btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px'
-            id='kt_header_menu_mobile_toggle'
-          >
-            <KTSVG path='/media/icons/duotune/text/txt001.svg' className='svg-icon-1' />
-          </div>
-        </div>
-      )} */}
     </div>
   )
 }
