@@ -12,6 +12,7 @@ interface Props {
   error?: string
   errorClassName?: string
   errorsClassName?: string
+  type?: 'input' | 'number'
 }
 
 export const Input = ({
@@ -25,12 +26,13 @@ export const Input = ({
   error = '',
   errorClassName = '',
   errorsClassName = '',
+  type = 'input'
 }: Props) => {
   return (
-    <div className={`row mb-8 ${wrapperClassName}`}>
+    <div className={wrapperClassName}>
       <Label label={label} htmlFor={name} labelClassName={labelClassName} />
       <input
-        type='text'
+        type={type}
         className={`form-control form-control-lg form-control-solid mb-3 mb-lg-0 ${className}`}
         placeholder={placeholder ? placeholder : name}
         name={name}
