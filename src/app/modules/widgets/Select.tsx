@@ -27,7 +27,7 @@ export const Select = ({
   options = [],
 }: Props) => {
   return (
-    <div className={`row mb-6 ${wrapperClassName}`}>
+    <div className={wrapperClassName}>
       <Label label={label} htmlFor={name} labelClassName={labelClassName} />
 
       <select
