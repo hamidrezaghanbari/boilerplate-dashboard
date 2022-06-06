@@ -30,7 +30,7 @@ export const Toggle = ({
   register = null
 }: Props) => {
   return (
-    <div
+    <label
       className={`form-check form-switch form-switch-sm form-check-custom form-check-solid ${wrapperClassName}`}
     >
       <input
@@ -40,13 +40,13 @@ export const Toggle = ({
         defaultChecked={defaultChecked}
         {...register?.(name)}
       />
-      <Label label={label} labelClassName={labelClassName} />
+      <Label label={label} labelClassName={`form-check-label ${labelClassName}`} />
       <Errors
         error={error}
         errors={errors}
         errorClassName={errorClassName}
         errorsClassName={errorsClassName}
       />
-    </div>
+    </label>
   )
 }
